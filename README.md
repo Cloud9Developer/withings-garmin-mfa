@@ -4,7 +4,7 @@ Since there was no single project that downloaded data from Withings, sent that 
 
 Note that this is very clunky and isn't optimized/still has lingering code from both repos that isn't being used, but maybe eventually (if I can find extra time), that'll be taken care of :)
 
-Best best is to use this with docker (similar to withings-sync) as I've only tested with this method:
+Best bet is to use this with docker (similar to withings-sync) as I've only tested with this method:
 
 `docker build -t withings-sync-mfa`
 ```
