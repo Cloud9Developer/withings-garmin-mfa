@@ -23,6 +23,7 @@ It's recommeded to not run more than once every hour or so, as Garmin will restr
 - You to be able to login to your email server to retrieve the MFA code.
     - I use gmail, and to login to the imap server, gmail requires an application password. This can be obtained from:
         - Google Account Settings > Security > 2-Step Verification (turned on) > App Passwords
+- You must not have another, old MFA email marked as unread in your inbox. This will cause the program to pull the wrong code.
 
 # Credits
 The following projects are referenced/used in this repository:
