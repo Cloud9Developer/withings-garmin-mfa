@@ -501,11 +501,13 @@ def sync():
             if ARGS.garmin_mfa:
                 if fit_data_weight is not None: 
                     logging.info("Weight .fit Found!")
-                    uploadWithingsData(ARGS.garmin_username, ARGS.garmin_password, ARGS.email_server, ARGS.email_login, ARGS.email_password, fit_data_weight)
+                    write_to_fitfile("output.weight.fit", fit_data_weight)
+                    uploadWithingsData(ARGS.garmin_username, ARGS.garmin_password, ARGS.email_server, ARGS.email_login, ARGS.email_password, "output.weight.fit")
                     logging.info("Fit file with weight information uploaded to Garmin Connect")
                 if fit_data_blood_pressure is not None: 
                     logging.info("Blood Pressure .fit Found!")
-                    uploadWithingsData(ARGS.garmin_username, ARGS.garmin_password, ARGS.email_server, ARGS.email_login, ARGS.email_password, fit_data_blood_pressure)
+                    write_to_fitfile("output.blood_pressure.fit", fit_data_blood_pressure)
+                    uploadWithingsData(ARGS.garmin_username, ARGS.garmin_password, ARGS.email_server, ARGS.email_login, ARGS.email_password, "output.blood_pressure.fit")
                     logging.info("Fit file with blood pressure information uploaded to Garmin Connect")
             else:
                 if fit_data_weight is not None and sync_garmin(fit_data_weight):
