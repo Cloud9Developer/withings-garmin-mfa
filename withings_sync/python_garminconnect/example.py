@@ -492,7 +492,7 @@ def uploadWithingsData(garmin_username, garmin_password, email_server, email_ema
     print("Uploading file")
 
 
-    display_json(f"api.upload_activity({activityfile})", api.upload_activity(activityfile))
+    api.upload_activity(activityfile)
 
     # unset env
     os.environ["EMAIL_EMAIL"] =  "REMOVED"
