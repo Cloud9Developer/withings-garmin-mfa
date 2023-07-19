@@ -492,7 +492,13 @@ def uploadWithingsData(garmin_username, garmin_password, email_server, email_ema
     print("Uploading file")
 
 
-    api.upload_activity(activityfile)
+    try:
+        api.upload_activity(activityfile)
+    except:
+        print("Failed to use Session. Trying login with MFA")
+        os.remove("session.json")
+        api = init_api(garmin_username, garmin_password)
+        api.upload_activity(activityfile)
 
     # unset env
     os.environ["EMAIL_EMAIL"] =  "REMOVED"
